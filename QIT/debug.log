@@ -1,0 +1,135 @@
+Not Found: /
+Not Found: /favicon.ico
+Not Found: /
+Unauthorized: /api/v1/kitchen/comment/
+Unauthorized: /api/token/
+Bad Request: /api/v1/kitchen/comment/
+Internal Server Error: /api/v1/kitchen/comment/
+Traceback (most recent call last):
+  File "/home/Qitcompany/.local/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/Qitcompany/.local/lib/python3.13/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/Qitcompany/.local/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Qitcompany/.local/lib/python3.13/site-packages/django/views/generic/base.py", line 106, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/usr/local/lib/python3.13/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/usr/local/lib/python3.13/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/usr/local/lib/python3.13/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/rest_framework/generics.py", line 246, in post
+    return self.create(request, *args, **kwargs)
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/Qitcompany/QIT/QIT/apps/kitchen/views.py", line 38, in create
+    instance = serializer.save(author=request.user)
+  File "/usr/local/lib/python3.13/site-packages/rest_framework/serializers.py", line 208, in save
+    self.instance = self.create(validated_data)
+                    ~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "/home/Qitcompany/QIT/QIT/apps/kitchen/serializers.py", line 26, in create
+    return RecipeComment.objects.create(**validated_data)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/Qitcompany/.local/lib/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/Qitcompany/.local/lib/python3.13/site-packages/django/db/models/query.py", line 669, in create
+    obj.save(force_insert=True, using=self.db)
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/Qitcompany/QIT/QIT/apps/kitchen/models.py", line 89, in save
+    self.full_clean()
+    ~~~~~~~~~~~~~~~^^
+  File "/home/Qitcompany/.local/lib/python3.13/site-packages/django/db/models/base.py", line 1712, in full_clean
+    raise ValidationError(errors)
+django.core.exceptions.ValidationError: {'recipe': ['This field cannot be null.']}
+Bad Request: /api/v1/kitchen/comment/
+Bad Request: /api/v1/kitchen/comment/
+Not Found: /
+Not Found: /favicon.ico
+Not Found: /
+Unauthorized: /api/v1/kitchen/like/
+Method Not Allowed: /api/v1/kitchen/like/
+Method Not Allowed: /api/v1/kitchen/like/
+Not Found: /
+Internal Server Error: /api/v1/kitchen/like/
+Traceback (most recent call last):
+  File "/home/Qitcompany/.local/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/Qitcompany/.local/lib/python3.13/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/Qitcompany/.local/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Qitcompany/.local/lib/python3.13/site-packages/django/views/generic/base.py", line 106, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/usr/local/lib/python3.13/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/usr/local/lib/python3.13/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/usr/local/lib/python3.13/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/rest_framework/generics.py", line 194, in post
+    return self.create(request, *args, **kwargs)
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/rest_framework/mixins.py", line 19, in create
+    self.perform_create(serializer)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/rest_framework/mixins.py", line 24, in perform_create
+    serializer.save()
+    ~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/site-packages/rest_framework/serializers.py", line 208, in save
+    self.instance = self.create(validated_data)
+                    ~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "/home/Qitcompany/QIT/QIT/apps/kitchen/serializers.py", line 38, in create
+    return RecipeLike.objects.create(**validated_data)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/Qitcompany/.local/lib/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/Qitcompany/.local/lib/python3.13/site-packages/django/db/models/query.py", line 669, in create
+    obj.save(force_insert=True, using=self.db)
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/Qitcompany/QIT/QIT/apps/kitchen/models.py", line 99, in save
+    self.full_clean()
+    ~~~~~~~~~~~~~~~^^
+  File "/home/Qitcompany/.local/lib/python3.13/site-packages/django/db/models/base.py", line 1712, in full_clean
+    raise ValidationError(errors)
+django.core.exceptions.ValidationError: {'author': ['This field cannot be null.'], 'recipe': ['This field cannot be null.']}
+Not Found: /
+Bad Request: /api/v1/kitchen/like/
+Internal Server Error: /api/v1/kitchen/like/
+Traceback (most recent call last):
+  File "/home/Qitcompany/.local/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/Qitcompany/.local/lib/python3.13/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/Qitcompany/.local/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Qitcompany/.local/lib/python3.13/site-packages/django/views/generic/base.py", line 106, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/usr/local/lib/python3.13/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/usr/local/lib/python3.13/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/usr/local/lib/python3.13/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/Qitcompany/QIT/QIT/apps/kitchen/views.py", line 52, in post
+    like = RecipeLike.objects.filter(author=request.user, recipe=recipe).first()
+           ^^^^^^^^^^
+NameError: name 'RecipeLike' is not defined. Did you mean: 'recipe_id'?
+Not Found: /
+Not Found: /
+Not Found: /
+Not Found: /
