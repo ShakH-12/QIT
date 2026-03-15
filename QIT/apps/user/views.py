@@ -2,11 +2,12 @@ from django.shortcuts import render
 from django.contrib.auth.models import User
 from rest_framework import generics, permissions, parsers
 from rest_framework.response import Response
+from rest_framework.views import APIView
 from .serializers import RegisterSerializer, ResponseSerializer
 
 
-def custom_404(self, request):
-    return render(request, "404.html")
+def custom_404(request, exception):
+    return render(request, '404.html')
 
 
 class RegisterView(generics.CreateAPIView):
@@ -20,7 +21,7 @@ class RegisterView(generics.CreateAPIView):
         return Response(ResponseSerializer(user).data)
 
 
-class ProfileView(generics.views.APIView):
+class ProfileView(APIView):
     permission_classes = [permissions.IsAuthenticated]
 
     def get(self, request):

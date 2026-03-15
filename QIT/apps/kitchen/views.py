@@ -24,8 +24,10 @@ class DetailView(generics.RetrieveAPIView):
 
 
 class RecipeCommentListCreateView(generics.ListCreateAPIView):
-    queryset = RecipeComment.objects.filter(is_active=True)
     serializer_class = RecipeCommentSerializer
+
+    def get_queryset(self):
+        return RecipeComment.objetcs.filter(is_active=True, recipe_id=self.kwargs["recipe_id"])
 
     def get_permissions(self):
         if self.request.method == "POST":

@@ -194,7 +194,7 @@ X_FRAME_OPTIONS = "DENY"
 
 LOGGING = {
     "version": 1,
-    "disable_existing_logger": False,
+    "disable_existing_loggers": False,
     "handlers": {
         "file": {
             "level": "INFO",

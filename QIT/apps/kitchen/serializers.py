@@ -14,6 +14,7 @@ class RecipeSerializer(serializers.ModelSerializer):
     class Meta:
         model = Recipe
         fields = "__all__"
+        read_only_fields = ["id", "recipe_images"]
 
 
 class RecipeCommentSerializer(serializers.ModelSerializer):
@@ -31,8 +32,3 @@ class RecipeLikeSerializer(serializers.ModelSerializer):
         model = RecipeLike
         fields = "__all__"
         read_only_fields = ["id", "author", "recipe", "created_at"]
-
-    def create(self, validated_data):
-        for i in self:
-            print(i)
-        return RecipeLike.objects.create(**validated_data)
